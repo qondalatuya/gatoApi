@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" 
+                   assembly="GatoApi" 
+                   namespace="GatoApi.Entidades">
+
+  <class>
+    <id name="Id">
+      <generator class="guid"/>
+    </id>
+  <property name="Nombre"/>
+  <property name="Sexo"/>
+  <property name="Edad"/>
+  <property name="DemandaMensual" />
+  </class>
+  
+</hibernate-mapping>
+
