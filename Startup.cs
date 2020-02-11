@@ -37,6 +37,10 @@ namespace GatoApi
 
             app.UseRouting();
 
+            app.UseCors(
+                builder => builder.WithOrigins("http://localhost:4200"));
+
+
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

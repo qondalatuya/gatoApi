@@ -16,8 +16,12 @@ namespace GatoApi.Config
         {
             var f = Fluently.Configure();
                         
-            //DESKTOP-RI5PVSQ\SQLEXPRESS
-            string connString = @"Server=DESKTOP-RI5PVSQ\SQLEXPRESS; Database=gato; User Id=gato; Password = gato";
+            //DESKTOP-RI5PVSQ\SQLEXPRESS casa
+            //string connString = @"Server=DESKTOP-RI5PVSQ\SQLEXPRESS; Database=gato; User Id=gato; Password = gato";
+
+            //06CHAPC15\MSSQLEXPRESS osprera
+            string connString = @"Server=06CHAPC15\MSSQLEXPRESS; Database=gato; User Id=gato; Password = gato";
+            
             f.Database(MsSqlConfiguration.MsSql2012.ConnectionString(connString).ShowSql());
 
             // mapeo de clases, con solo hacer una referencia a una clase nos mapea todas las clases

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using GatoApi.Daos;
 using GatoApi.Entidades;
+using System.Web.Http.Cors;
 
 namespace GatoApi.Controllers
 {
@@ -16,6 +17,7 @@ namespace GatoApi.Controllers
         private MaterialDao _materialDao = new MaterialDao();
 
         [HttpGet]
+        [EnableCors(origins: "http://localhost:4200/", headers: "*", methods: "*")]
         public IActionResult getMateriales()
         {
             try
