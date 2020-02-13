@@ -43,6 +43,17 @@ namespace GatoApi.Controllers
             return Ok();
 
         }
+
+        [HttpGet("probar")]
+        public ActionResult<Cliente> probar()
+        {
+             Cliente cl = new Cliente();
+            cl.Nombre="Cliente de pureba";
+
+            return Ok(cl);
+
+
+        }
         
 
     }
