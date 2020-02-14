@@ -11,7 +11,7 @@ namespace GatoApi.Mapping
     {
         public ClienteMap()
         {
-            Id(x => x.Id).GeneratedBy.Assigned();
+            Id(x => x.Id).GeneratedBy.Native();
             Map(x => x.Nombre);
             Map(x => x.Sexo);
             Map(x => x.Edad);

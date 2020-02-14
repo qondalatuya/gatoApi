@@ -11,7 +11,7 @@ namespace GatoApi.Mappings
     {
         public MaterialMap()
         {
-            this.Id(x => x.Id).GeneratedBy.Assigned();
+            this.Id(x => x.Id).GeneratedBy.Native();
             this.Map(x => x.Nombre);
             this.Map(x => x.Existencia);
             this.Map(x => x.Unidad);

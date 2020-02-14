@@ -30,5 +30,21 @@ namespace GatoApi.Controllers
             }
             
         }
+
+        [HttpPost("agregar")]
+        public IActionResult AddMaterial(Material material)
+        {
+            try
+            {
+                this._materialDao.Persist(material);
+                return Ok("se agregó correctametne el material " +material.ToString());
+            }
+            catch
+            {
+
+            }
+            
+            return Ok("el mensaje es " + material.Nombre);
+        }
     }
 }

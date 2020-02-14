@@ -11,5 +11,10 @@ namespace GatoApi.Entidades
         public virtual string Nombre { get; set; }
         public virtual float Existencia { get; set; }
         public virtual string Unidad { get; set; }
+        public virtual string ToString()
+        {
+            return (this.Id + " " + this.Nombre + " " + this.Unidad);
+
+        }
     }
 }

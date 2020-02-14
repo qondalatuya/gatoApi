@@ -10,7 +10,7 @@ namespace GatoApi.Daos
 {
     /* fuente: https://federicoluciano.wordpress.com/2013/08/23/generic-dao-with-nhibernate-and-c-generics/ */
     
-    public class GenericDao<T>
+    public class GenericDao<T>:IDao<T>
     {
         private ISession session = Util.CreateSessionFactory().OpenSession();
 
@@ -51,10 +51,10 @@ namespace GatoApi.Daos
                     tr.Commit();
                     return t;
                 }
-                catch
+                catch (Exception e)
                 {
                     tr.Rollback();
-                    throw;
+                    throw e;
                 }
             }
 
