@@ -25,6 +25,8 @@ namespace GatoApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddCors();
+            //services.AddMvc();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -37,8 +39,16 @@ namespace GatoApi
 
             app.UseRouting();
 
-            app.UseCors(
-                builder => builder.WithOrigins("http://localhost:4200"));
+            
+            app.UseCors(x =>
+            {
+                x
+                .AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader();
+            });
+
+            //app.UseCors(builder => builder.WithOrigins("http://localhost:4200"));
 
 
             app.UseAuthorization();

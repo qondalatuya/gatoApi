@@ -10,7 +10,7 @@ namespace GatoApi.Daos
 {
     /* fuente: https://federicoluciano.wordpress.com/2013/08/23/generic-dao-with-nhibernate-and-c-generics/ */
     
-    public class GenericDao<T>:IDao<T>
+    public class GenericDao<T>
     {
         private ISession session = Util.CreateSessionFactory().OpenSession();
 
@@ -76,6 +76,12 @@ namespace GatoApi.Daos
                 }
             }
 
+        }
+
+        public void Delete (int id)
+        {
+            T t = GetById(id);
+            Delete(t);
         }
 
         public T Update(T t)

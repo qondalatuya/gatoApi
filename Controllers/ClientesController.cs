@@ -40,7 +40,7 @@ namespace GatoApi.Controllers
         public IActionResult Post(Cliente cliente)
         {
             _clienteDao.Persist(cliente);
-            return Ok();
+            return Ok(cliente);
 
         }
 

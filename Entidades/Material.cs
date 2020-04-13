@@ -9,12 +9,10 @@ namespace GatoApi.Entidades
     {
         public virtual int Id { get; set; }
         public virtual string Nombre { get; set; }
+        public virtual TipoMaterial Tipo { get; set; }
         public virtual float Existencia { get; set; }
         public virtual string Unidad { get; set; }
-        public virtual string ToString()
-        {
-            return (this.Id + " " + this.Nombre + " " + this.Unidad);
+        public virtual float PrecioUnidad { get; set; }
 
-        }
     }
 }
